@@ -12,7 +12,7 @@ public class CoinGeneration : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
-        for(int i = 0; i < 50; i++)
+        for(int i = 0; i < 200; i++)
         {
             Debug.Log("ƒRƒCƒ“¶¬");
             Instantiate(coinPrehub, startPos + new Vector3(Random.Range(-scope, scope), transform.position.y, Random.Range(-scope, scope)), Quaternion.identity);
