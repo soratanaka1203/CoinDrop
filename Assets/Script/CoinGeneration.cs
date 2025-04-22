@@ -6,7 +6,7 @@ public class CoinGeneration : MonoBehaviour
 {
     [SerializeField] GameObject coinPrehub;
     private Vector3 startPos;
-    public float scope = 3; //¶¬‚·‚é”ÍˆÍ
+    [SerializeField] private float scope = 1.5f; //¶¬‚·‚é”ÍˆÍ
 
     // Start is called before the first frame update
     void Start()

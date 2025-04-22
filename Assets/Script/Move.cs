@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public float amplitude = 1.0f; // “®‚­•
-    public float frequency = 1.0f; // “®‚­‘¬‚³
+    [SerializeField] private float amplitude = 1.5f; // “®‚­•
+    [SerializeField] private float frequency = 0.75f; // “®‚­‘¬‚³
 
     private Vector3 startPos = Vector3.zero;
 
