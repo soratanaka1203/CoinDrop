@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinGeneration : MonoBehaviour
 {
-    [SerializeField] GameObject coinPrehub;
+    [SerializeField] GameObject coinPrefab;
     private Vector3 startPos;
     [SerializeField] private float scope = 1.5f; //ê∂ê¨Ç∑ÇÈîÕàÕ
 
@@ -15,7 +15,7 @@ public class CoinGeneration : MonoBehaviour
         for(int i = 0; i < 200; i++)
         {
             Debug.Log("ÉRÉCÉìê∂ê¨");
-            Instantiate(coinPrehub, startPos + new Vector3(Random.Range(-scope, scope), transform.position.y, Random.Range(-scope, scope)), Quaternion.identity);
+            Instantiate(coinPrefab, startPos + new Vector3(Random.Range(-scope, scope), transform.position.y, Random.Range(-scope, scope)), Quaternion.identity);
         }
     }
 }
