@@ -5,7 +5,7 @@ using TMPro;
 
 public class CoinCollector : MonoBehaviour
 {
-    private int coinCount = 100;
+    public int coinCount { get; private set; } = 100 ;//ŠO•”‚©‚çŽæ“¾‚¾‚¯‚Å‚«‚é
     [SerializeField] TextMeshProUGUI counterText;
 
     // Start is called before the first frame update
@@ -28,6 +28,12 @@ public class CoinCollector : MonoBehaviour
             coinCount++;
             UpdateText();
         }
+    }
+
+    public void DecreaseCoin()
+    {
+        coinCount--;
+        UpdateText();
     }
 
     private void UpdateText()
