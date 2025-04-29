@@ -14,7 +14,6 @@ public class CoinGeneration : MonoBehaviour
         startPos = transform.position;
         for(int i = 0; i < 200; i++)
         {
-            Debug.Log("ƒRƒCƒ“¶¬");
             Instantiate(coinPrefab, startPos + new Vector3(Random.Range(-scope, scope), transform.position.y, Random.Range(-scope, scope)), Quaternion.identity);
         }
     }
