@@ -20,7 +20,10 @@ public class CoinThrower : MonoBehaviour
     {
 
         float x = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
-        transform.position += new Vector3(x, 0, 0);//横移動
+        Vector3 newPos = transform.position + new Vector3(x, 0, 0);
+        newPos.x = Mathf.Clamp(newPos.x, -4f, 4.5f); // X座標を制限
+        transform.position = newPos;//横移動
+
         float input = Input.GetAxis("Vertical") * (moveSpeed * 5)* Time.deltaTime;
         RotateWithLimit(input);//角度を変更
 
@@ -57,7 +60,7 @@ public class CoinThrower : MonoBehaviour
         if (collector.coinCount <= 0)
             return;
 
-        GameObject coin = Instantiate(coinPrefab, throwPoint.position, Quaternion.identity);
+        GameObject coin = Instantiate(coinPrefab, throwPoint.position, Quaternion.Euler(0, 0, 90));
 
         Rigidbody rb = coin.GetComponent<Rigidbody>();
         if (rb != null)
@@ -82,7 +85,7 @@ public class CoinThrower : MonoBehaviour
         xAngle += input;
 
         // 角度制限
-        xAngle = Mathf.Clamp(xAngle, -30, 90);
+        xAngle = Mathf.Clamp(xAngle, -30, 70);
 
         // 回転を適用
         transform.eulerAngles = new Vector3(xAngle, angles.y, angles.z);
